@@ -10,3 +10,4 @@ cdk.out
 
 # AWS
 outfile
+logs.txt
