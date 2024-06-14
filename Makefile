@@ -37,7 +37,7 @@ watch:
 	npm run watch
 
 start:       ## Start LocalStack
-	ACTIVATE_PRO=1 LAMBDA_RUNTIME_ENVIRONMENT_TIMEOUT=300 localstack start -d
+	LAMBDA_RUNTIME_ENVIRONMENT_TIMEOUT=300 localstack start -d
 
 stop:        ## Stop LocalStack
 	@echo
