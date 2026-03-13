@@ -37,7 +37,8 @@ watch:
 	npm run watch
 
 start:       ## Start LocalStack
-	LAMBDA_RUNTIME_ENVIRONMENT_TIMEOUT=300 localstack start -d
+	@test -n "${LOCALSTACK_AUTH_TOKEN}" || (echo "LOCALSTACK_AUTH_TOKEN is not set. Find your token at https://app.localstack.cloud/workspace/auth-token"; exit 1)
+	LAMBDA_RUNTIME_ENVIRONMENT_TIMEOUT=300 LOCALSTACK_AUTH_TOKEN=$(LOCALSTACK_AUTH_TOKEN) localstack start -d
 
 stop:        ## Stop LocalStack
 	@echo

@@ -13,6 +13,7 @@ A demonstration of how to hot reload TypeScript Lambda functions with the Cloud 
 
 ## Prerequisites
 
+* A valid [LocalStack for AWS license](https://localstack.cloud/pricing). Your license provides a [`LOCALSTACK_AUTH_TOKEN`](https://docs.localstack.cloud/getting-started/auth-token/) to activate LocalStack.
 * [`localstack` CLI](https://docs.localstack.cloud/getting-started/installation)
 * [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) with [`awslocal`](https://docs.localstack.cloud/user-guide/integrations/aws-cli/#localstack-aws-cli-awslocal)
 * [Node.js](https://nodejs.org/en/download/)
@@ -34,7 +35,9 @@ make install
 ## Start LocalStack
 
 ```bash
+export LOCALSTACK_AUTH_TOKEN=<your-auth-token>
 make start
+make ready
 ```
 
 ## Deploy the Application
