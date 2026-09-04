@@ -13,12 +13,12 @@ A demonstration of how to hot reload TypeScript Lambda functions with the Cloud 
 
 ## Prerequisites
 
-* A valid [LocalStack for AWS license](https://localstack.cloud/pricing). Your license provides a [`LOCALSTACK_AUTH_TOKEN`](https://docs.localstack.cloud/getting-started/auth-token/) to activate LocalStack.
-* [`localstack` CLI](https://docs.localstack.cloud/getting-started/installation)
-* [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) with [`awslocal`](https://docs.localstack.cloud/user-guide/integrations/aws-cli/#localstack-aws-cli-awslocal)
+* A valid [LocalStack for AWS license](https://localstack.cloud/pricing). Your license provides a [`LOCALSTACK_AUTH_TOKEN`](https://docs.localstack.cloud/aws/getting-started/auth-token/) to activate LocalStack.
+* [`lstk` CLI](https://docs.localstack.cloud/aws/developer-tools/running-localstack/lstk/), installed via `npm install -g @localstack/lstk` or `brew install localstack/tap/lstk`.
+* [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html), required by `lstk aws`.
 * [Node.js](https://nodejs.org/en/download/)
 * [Docker](https://docs.docker.com/get-docker/)
-* [AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-typescript.html) with [`cdklocal`](https://docs.localstack.cloud/user-guide/integrations/aws-cdk)
+* [AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-typescript.html), deployed via the `lstk cdk` proxy.
 
 ## Check prerequisites
 
@@ -37,7 +37,6 @@ make install
 ```bash
 export LOCALSTACK_AUTH_TOKEN=<your-auth-token>
 make start
-make ready
 ```
 
 ## Deploy the Application
