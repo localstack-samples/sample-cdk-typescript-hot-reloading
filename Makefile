@@ -32,6 +32,9 @@ deploy:      ## Deploy the CDK stack to the local environment
 run:         ## Run a test invocation
 	@lstk aws lambda invoke --function-name test-hotreload outfile && cat outfile
 
+test:        ## Invoke the function and verify hot reloading
+	./test.sh
+
 watch:
 	npm run watch
 
@@ -47,7 +50,7 @@ logs:        ## Retrieve LocalStack logs
 	@lstk logs > logs.txt
 
 test-ci:     ## Run CI tests
-	make check start install deploy run; return_code=`echo $$?`;\
+	make check start install deploy test; return_code=`echo $$?`;\
 	make logs; make stop; exit $$return_code;
 
-.PHONY: usage check install run start stop logs test-ci
+.PHONY: usage check install run test start stop logs test-ci
